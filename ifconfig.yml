@@ -1,0 +1,12 @@
+- name: test playbook
+  user: root
+  hosts: all
+
+  tasks:
+
+      # it is possible to save the result of any command in a named register.  This variable will be made
+      # available to tasks and templates made further down in the execution flow.
+
+      - shell: ifconfig
+        ignore_errors: yes
+        register: uname_result
